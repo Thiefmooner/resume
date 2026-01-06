@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="蔡元昊 - 前端开发工程师简历">
+    <title>蔡元昊 - 前端开发工程师</title>
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            /* Google Material Based Colors */
+            --primary: #1a1a2e;
+            --accent: #1a73e8;
+            --accent-light: #4285f4;
+            --accent-bg: #e8f0fe;
+            --text-main: #2d3748;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --bg-body: #f1f5f9;
+            --bg-paper: #ffffff;
+            --bg-section: #fafbfc;
+            --font-stack: 'Roboto', 'Noto Sans SC', sans-serif;
+
+            /* Google Colors */
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .resume-paper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-paper);
+            padding: 60px 70px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 12px;
+            border-top: 6px solid transparent;
+            border-image: linear-gradient(to right, var(--g-blue) 25%, var(--g-red) 25%, var(--g-red) 50%, var(--g-yellow) 50%, var(--g-yellow) 75%, var(--g-green) 75%) 6;
+            position: relative;
+            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 进场动画 */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+
+        .material-icons {
+            font-size: 18px;
+            vertical-align: text-bottom;
+            margin-right: 6px;
+        }
+
+        h1 {
+            margin: 0 0 16px 0;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .role {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            padding: 6px 20px;
+            background: var(--accent-bg);
+            border-radius: 20px;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 18px;
+            position: relative;
+            color: var(--text-light);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+        }
+
+        .contact-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 16px;
+            width: 1.5px;
+            background: linear-gradient(to bottom, transparent, var(--border), transparent);
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+            background: var(--bg-section);
+            transform: translateY(-2px);
+        }
+
+        /* --- Sections --- */
+        section {
+            margin-bottom: 45px;
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .resume-paper>section:nth-of-type(1) {
+            animation-delay: 0.2s;
+        }
+
+        .resume-paper>section:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+
+        .resume-paper>section:nth-of-type(3) {
+            animation-delay: 0.4s;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-light);
+            border-radius: 2px;
+        }
+
+        .section-title .material-icons {
+            font-size: 28px;
+            color: var(--accent);
+            margin-right: 12px;
+        }
+
+        /* --- Education & Intention --- */
+        .edu-container {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            padding: 20px 24px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .edu-container:hover {
+            transform: translateX(8px);
+            border-left-color: var(--accent-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-school {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .edu-detail {
+            color: var(--text-main);
+            margin-left: 12px;
+        }
+
+        .edu-time {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: var(--text-light);
+            font-size: 14px;
+            background: var(--bg-section);
+            padding: 4px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        /* --- Skills --- */
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: var(--bg-section);
+            padding: 24px;
+            border-radius: 10px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: baseline;
+            font-size: 15px;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .skill-item:hover {
+            transform: translateX(8px);
+            background: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .skill-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 90px;
+            flex-shrink: 0;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .skill-label::after {
+            content: "：";
+            position: absolute;
+            right: 0;
+        }
+
+        .skill-content {
+            color: var(--text-main);
+            margin-left: 16px;
+            line-height: 1.8;
+        }
+
+        /* --- Experience --- */
+        .job-card {
+            margin-bottom: 40px;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+            border-radius: 12px;
+            padding: 24px 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .job-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--g-blue), var(--g-green));
+            border-radius: 12px 12px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-light);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px dashed var(--border);
+        }
+
+        .company {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.3px;
+        }
+
+        .job-time {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            color: var(--text-light);
+            background: linear-gradient(135deg, #e8f0fe 0%, #f0f9ff 100%);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Projects */
+        .project-block {
+            margin-bottom: 32px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-light);
+            transition: all 0.3s ease;
+        }
+
+        .project-block:hover {
+            box-shadow: var(--shadow-sm);
+            border-left-width: 5px;
+        }
+
+        .project-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-name {
+            display: block;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 技术栈独立行 */
+        .tech-row {
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .tech-tag {
+            font-size: 13px;
+            color: #0369a1;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1.5px solid #7dd3fc;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .tech-tag:hover {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: white;
+            border-color: #0284c7;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3);
+        }
+
+        .project-desc {
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            line-height: 1.8;
+            background: var(--bg-section);
+            padding: 14px 18px;
+            border-left: 3px solid var(--accent-light);
+            border-radius: 6px;
+            font-style: italic;
+        }
+
+        .feature-list {
+            padding-left: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .feature-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .feature-item::before {
+            content: "▸";
+            position: absolute;
+            left: 4px;
+            top: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .feature-item strong {
+            display: block;
+            width: fit-content;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+            padding: 2px 8px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .feature-item div {
+            margin-left: 0;
+            color: var(--text-light);
+        }
+
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 32px 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-paper {
+                box-shadow: none;
+                padding: 30px 40px;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                animation: none;
+            }
+
+            .job-card {
+                box-shadow: none;
+                border: 1px solid #e0e0e0;
+                page-break-inside: avoid;
+            }
+
+            .tech-tag {
+                border: 1px solid #ccc;
+                color: #000;
+                background: none;
+                box-shadow: none;
+            }
+
+            .feature-item strong {
+                background: #f0f0f0;
+            }
+
+            section {
+                opacity: 1;
+                animation: none;
+            }
+        }
+
+
+        @media (max-width: 1024px) {
+            .resume-paper {
+                max-width: 100%;
+                padding: 50px 40px;
+            }
+        }
+
+        /* 平板适配 */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+                line-height: 1.65;
+            }
+
+            .resume-paper {
+                padding: 40px 30px;
+                margin: 0;
+                border-radius: 8px;
+                box-shadow: var(--shadow-md);
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 12px;
+                letter-spacing: -0.3px;
+            }
+
+            .role {
+                font-size: 16px;
+                padding: 5px 16px;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+
+            .section-title .material-icons {
+                font-size: 24px;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 16px;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 16px;
+            }
+
+            .contact-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .company {
+                font-size: 17px;
+            }
+
+            .job-time {
+                align-self: flex-start;
+            }
+
+            .skill-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .skill-label {
+                margin-bottom: 6px;
+                min-width: auto;
+            }
+
+            .skill-label::after {
+                content: "";
+            }
+
+            .skill-content {
+                margin-left: 0;
+            }
+
+            .project-block {
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+
+            .tech-row {
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+
+            .tech-tag {
+                font-size: 12px;
+                padding: 3px 10px;
+            }
+
+            .feature-item {
+                padding-left: 20px;
+                margin-bottom: 14px;
+            }
+        }
+
+        /* 手机适配 */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+                background: var(--bg-body);
+            }
+
+            .resume-paper {
+                padding: 30px 20px;
+                border-radius: 6px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .role {
+                font-size: 15px;
+                padding: 4px 14px;
+            }
+
+            header {
+                margin-bottom: 35px;
+                padding-bottom: 20px;
+            }
+
+            .contact-bar {
+                gap: 8px;
+            }
+
+            .contact-item {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .material-icons {
+                font-size: 16px;
+                margin-right: 4px;
+            }
+
+            section {
+                margin-bottom: 35px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                margin-bottom: 16px;
+                padding-bottom: 8px;
+                border-bottom-width: 2px;
+            }
+
+            .section-title .material-icons {
+                font-size: 22px;
+                margin-right: 8px;
+            }
+
+            .section-title::after {
+                width: 40px;
+                height: 2px;
+                bottom: -2px;
+            }
+
+            .edu-container {
+                padding: 16px 18px;
+                margin-bottom: 12px;
+            }
+
+            .edu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                margin-bottom: 10px;
+            }
+
+            .edu-school {
+                font-size: 15px;
+            }
+
+            .edu-detail {
+                margin-left: 0;
+                font-size: 14px;
+            }
+
+            .edu-time {
+                font-size: 13px;
+                padding: 3px 10px;
+            }
+
+            .skill-list {
+                padding: 18px;
+                gap: 12px;
+            }
+
+            .skill-item {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .skill-label {
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            .skill-content {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .job-card {
+                padding: 20px 16px;
+                margin-bottom: 30px;
+                border-radius: 10px;
+            }
+
+            .job-card::before {
+                height: 3px;
+            }
+
+            .job-header {
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+            }
+
+            .company {
+                font-size: 16px;
+            }
+
+            .job-time {
+                font-size: 13px;
+                padding: 5px 12px;
+            }
+
+            .project-block {
+                padding: 14px;
+                margin-bottom: 20px;
+                border-left-width: 3px;
+            }
+
+            .project-block:hover {
+                border-left-width: 3px;
+            }
+
+            .project-name {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .tech-row {
+                gap: 6px;
+                margin-bottom: 12px;
+            }
+
+            .tech-tag {
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 12px;
+            }
+
+            .project-desc {
+                font-size: 14px;
+                padding: 12px 14px;
+                margin-bottom: 14px;
+                line-height: 1.7;
+            }
+
+            .feature-list {
+                margin-top: 8px;
+            }
+
+            .feature-item {
+                padding-left: 18px;
+                margin-bottom: 12px;
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .feature-item::before {
+                font-size: 14px;
+                left: 2px;
+            }
+
+            .feature-item strong {
+                font-size: 14px;
+                padding: 2px 6px;
+                margin-bottom: 5px;
+            }
+
+            .feature-item div {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .divider {
+                margin: 24px 0;
+            }
+
+            /* 优化移动端触摸体验 */
+            .contact-item,
+            .tech-tag,
+            .skill-item {
+                -webkit-tap-highlight-color: rgba(26, 115, 232, 0.1);
+            }
+
+            /* 移动端禁用某些hover效果 */
+            .job-card:hover,
+            .project-block:hover,
+            .edu-container:hover {
+                transform: none;
+            }
+
+            /* 但保留点击反馈 */
+            .job-card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* 超小屏幕适配 */
+        @media (max-width: 360px) {
+            .resume-paper {
+                padding: 25px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .role {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 17px;
+            }
+
+            .contact-item {
+                font-size: 13px;
+            }
+
+            .skill-content,
+            .feature-item,
+            .project-desc {
+                font-size: 13px;
+            }
+
+            .tech-tag {
+                font-size: 10px;
+                padding: 2px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-paper">
+        <!-- Header -->
+        <header>
+            <h1>蔡元昊</h1>
+            <div class="role">前端开发工程师</div>
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <span class="material-icons">email</span>
+                    <span>moonthief@foxmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="material-icons">phone_android</span>
+                    <span>19261032030</span>
+                </div>
+                <div class="contact-item">
+                    <span class="material-icons">account_circle</span>
+                    <span>25岁</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Education -->
+        <section>
+            <div class="section-title">
+                <span class="material-icons">school</span>
+                教育背景
+            </div>
+            <div class="edu-container">
+                <div class="edu-item">
+                    <div>
+                        <span class="edu-school">天津工业大学（双一流）</span>
+                        <span class="edu-detail">软件工程 | 全日制本科</span>
+                    </div>
+                    <span class="edu-time">2017.06 - 2021.06</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-school" style="font-weight: 500;">考研（至复试第一轮）</span>
+                    <span class="edu-time">2021.07 - 2022.04</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <div class="section-title">
+                <span class="material-icons">code</span>
+                专业技能
+            </div>
+            <div class="skill-list">
+                <div class="skill-item">
+                    <span class="skill-label">编程语言</span>
+                    <span class="skill-content">JavaScript, Vue3, Vue2, Dapper, .NET, C#</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">性能分析</span>
+                    <span class="skill-content">Lighthouse, WebPageTest, SpeedCurve</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">工具链</span>
+                    <span class="skill-content">NPM, PNPM, NVM, NRM, Webpack5, Copilot, Claude , Gemini Pro
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section>
+            <div class="section-title">
+                <span class="material-icons">work</span>
+                工作与实习经历
+            </div>
+
+            <!-- 1. Luokewo (Oldest) -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company">洛克沃科技公司（实习）</div>
+                    <div class="job-time">2022.06 - 2022.09</div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-name">项目：“勒克”网络安全监测预警系统</div>
+
+                    <div class="project-desc">
+                        一个网络安全监测预警系统，用于实时监测和预警网络安全威胁的解决方案
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <strong>构建优化：</strong>
+                            <div style="margin-bottom: 4px;">利用 Thread-loader 进行多线程并行构建，显著提升构建效率</div>
+                            <div>配置 Webpack 的 resolve.modules 属性，优化第三方模块查找路径</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>性能优化：</strong>利用 CDN 内容分发，托管资源文件，优化加载速度并降低服务器负载
+                        </li>
+                        <li class="feature-item">
+                            <strong>容错处理：</strong>
+                            <div style="margin-bottom: 4px;">通过 Router.beforeEach 钩子结合时间戳与
+                                navigator.sendBeacon，实现并上报页面停留时间</div>
+                            <div>调用后端 API 时，加入重试机制（最多3次，间隔500毫秒）和超时处理，增强网络稳定性</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Wanxiang (Middle) -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company">北京万向新元科技有限公司</div>
+                    <div class="job-time">2022.10 - 2025.02</div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-name">项目一：倍耐力Pirelli大型车间群控系统</div>
+                    <div class="tech-row">
+                        <span class="tech-tag">Vue3</span>
+                        <span class="tech-tag">Pinia</span>
+                        <span class="tech-tag">Element-Plus</span>
+                        <span class="tech-tag">Flexbox</span>
+                        <span class="tech-tag">Less</span>
+                        <span class="tech-tag">LocalStorage</span>
+                        <span class="tech-tag">Webpack</span>
+                    </div>
+
+                    <div class="project-desc">
+                        实时采集传感器数据，通过看板监控生产状态，自动预警异常，优化设备调度与能耗
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <strong>布局问题：</strong>
+                            <div style="margin-bottom: 4px;">采用 Flex 与 Rem 单位作为响应式核心，利用 Rem 的根字体依赖特性实现整体等比缩放</div>
+                            <div>结合 Flex 处理内容流布局，并仅在布局发生质变的关键断点，使用媒体查询进行重构，显著提升了视觉一致性</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>大文件优化：</strong>
+                            <div style="margin-bottom: 4px;">针对大文件上传卡顿问题，设计了 “分片+多线程” 异步处理架构</div>
+                            <div style="margin-bottom: 4px;">前端采用 slice 将文件分片，主线程负责分片上传与进度同步</div>
+                            <div style="margin-bottom: 4px;">同时，通过 Web Worker 启动独立线程计算文件哈希值，实现哈希计算与网络传输并行执行
+                            </div>
+                            <div>在此基础上，增加分片哈希校验与断点续传机制，服务器通过比对分片哈希确保数据完整性，客户端通过本地存储记录上传进度，即使刷新页面或网络中断也可从断点恢复</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>角色管理：</strong>
+                            <div style="margin-bottom: 4px;">为解决系统多角色权限的问题，设计了动态权限控制方案</div>
+                            <div style="margin-bottom: 4px;">将路由配置拆分为 “基础路由”（登录页、404等）与 “权限路由”，并建立 角色-权限 (RBAC) 的映射表
+                            </div>
+                            <div>用户登录后，系统根据其角色标识，动态筛选并生成可访问的路由树，通过 router.addRoute() 动态注入</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>防抖：</strong>
+                            <div style="margin-bottom: 4px;">针对项目中普遍存在的高频交互场景，实现了防抖工具函数：</div>
+                            <div style="margin-bottom: 4px;">基于 Vue 3的customRef，封装了useDebouncedRef 自定义响应式引用</div>
+                            <div style="margin-bottom: 4px;">对搜索框、按钮提交、图表缩放等交互统一使用防抖，防止高频请求与数据刷新</div>
+                            <div style="margin-bottom: 4px;">将抖动控制逻辑与组件业务逻辑解耦，组件只需像使用普通 ref 一样声明变量，即可自动获得防抖能力</div>
+                            <div>同时，通过支持可配置的延迟时间，使相关接口调用量平均减少</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>前端监控 SDK：</strong>
+                            <div style="margin-bottom: 4px;">通过 PerformanceObserver 与 MutationObserver 采集首屏加载、API
+                                耗时、组件渲染等关键指标</div>
+                            <div>利用 sendBeacon 在页面卸载时可靠上报，并基于此数据在内部搭建了 “性能仪表盘”，自动定位慢接口与渲染卡顿组件，并进行针对性优化，将平均 FCP 时间大幅优化
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="divider"></div>
+
+                    <div class="project-name">项目二：普利司通 Bridgestone 轮胎气力输送平台</div>
+                    <div class="tech-row">
+                        <span class="tech-tag">Vue3</span>
+                        <span class="tech-tag">Pinia</span>
+                        <span class="tech-tag">Element-Plus</span>
+                        <span class="tech-tag">Flexbox</span>
+                        <span class="tech-tag">Less</span>
+                        <span class="tech-tag">LocalStorage</span>
+                        <span class="tech-tag">Webpack</span>
+                    </div>
+                    <div class="project-desc">
+                        集中监控管网压力、设备状态，并提供远程启停、参数设置及报警管理功能，保障系统稳定运行
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <strong>场景优化：</strong>
+                            <div style="margin-bottom: 4px;">采用 file-loader 或 url-loader
+                                处理静态资源，对小体积图片、字体转为Base64编码嵌入代码，减少HTTP请求次数</div>
+                            <div style="margin-bottom: 4px;">配置 contenthash
+                                命名规则，为JS、CSS、静态资源添加版本哈希值，实现文件内容变更时自动更新缓存，未变更文件复用缓存</div>
+                            <div>配置 cache-loader 缓存编译结果，二次构建时直接复用缓存文件，减少重复编译耗时，尤其优化大型项目热更新速度</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>CSS 隔离与提取：</strong>
+                            <div style="margin-bottom: 4px;">针对路由组件的样式管理，配置 mini-css-extract-plugin 实现按路由分块提取 CSS</div>
+                            <div style="margin-bottom: 4px;">每个路由 chunk 对应的样式会被提取到独立的 .css 文件，实现样式的按需加载和卸载，避免了传统全局 CSS
+                                的冗余和污染问题</div>
+                            <div>同时，为每个路由组件开启 scoped CSS 的深度选择器优化（/deep/ 或 ::v-deep），确保样式隔离</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>多环境差异化构建：</strong>
+                            <div style="margin-bottom: 4px;">使用 webpack-merge
+                                工具，将公共配置（如处理图片和CSS的规则）与针对特定环境的配置（如开发环境的调试工具、生产环境的压缩插件）合并</div>
+                            <div style="margin-bottom: 4px;">利用 DefinePlugin 向代码中注入环境变量（
+                                API_BASE_URL），实现不同环境自动连接对应的后端服务地址</div>
+                            <div style="margin-bottom: 4px;">在生产环境启用代码压缩混淆（TerserWebpackPlugin），并将稳定依赖配置为
+                                externals，通过公共CDN引入，从而大幅减小最终发布文件的体积</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Qingneng (Newest) -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="company">北京清能互联科技有限公司</div>
+                    <div class="job-time">2025.08 - 至今</div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-name">项目：电力交易数据自动采集系统</div>
+                    <div class="tech-row">
+                        <span class="tech-tag">Vue3</span>
+                        <span class="tech-tag">Electron</span>
+                        <span class="tech-tag">Puppeteer</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+
+                    <div class="project-desc">
+                        负责开发电力交易数据自动采集系统的定时任务调度模块，实现多任务的定时执行、状态管理和可视化配置功能
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <strong>iframe 透传全局对象：</strong>
+                            <div style="margin-bottom: 4px;">爬取目标的数据（如 帆软报表）被封装在复杂的 Frame
+                                闭包中，且接口参数涉及复杂的动态加密（Token/Ticket），直接模拟请求难度大且易失效</div>
+                            <div style="margin-bottom: 4px;">实现动态 IFrame，在 Electron 的 Page 上下文中，通过 DOM 操作动态创建隐形 iframe
+                                (display: none) 加载目标业务 URL，使其自动继承主页面的 Cookie 与 Session 上下文</div>
+                            <div>然后利用 page.evaluate 穿透 Frame 边界，直接访问子 Frame 的 window 全局对象（如 window.FR.SessionMgr）提取关键
+                                SessionID 或数据对象，从而进行模拟数据请求，获取真实的电力现货出清，负荷预测等数据</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>定时任务调度模块：</strong>
+                            <div style="margin-bottom: 4px;">在主进程中封装 TaskScheduler，维护全局任务队列 taskQueue 和执行锁
+                                isProcessing，所有被触发的任务统一进入队列尾部，而非直接执行
+                            </div>
+                            <div style="margin-bottom: 4px;"> 多个定时任务可能同时触发（同一时刻被 node-schedule 监听），并发执行会导致浏览器 Session
+                                冲突、Cookie 覆盖</div>
+                            <div style="margin-bottom: 4px;">为每个任务定义 6 种互斥状态（scheduled 已计划 → queued 排队中 → running 执行中 →
+                                completed/failed/cancelled 终态）
+                                通过 循环检测锁状态，确保同一时刻仅有一个任务处于 running 状态</div>
+                            <div>在只需采集数据的场景下绕过了复杂的登录验证机制</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>智能容错重试：</strong>
+                            <div style="margin-bottom: 4px;">对网络不稳定、交易中心接口不稳定、Session
+                                过期等异常场景统一使用分层重试机制，防止任务大面积失败，构建了请求级、任务级两级策略</div>
+                            <div style="margin-bottom: 4px;">请求级重试：</div>
+                            <div style="margin-bottom: 4px;"> 触发条件：HTTP 500/502 等服务器错误，使用退避策略
+                                <div style="margin-bottom: 4px;">第一次失败后等待较短时间（如 1 秒）
+                                    第二次失败后等待更长时间（如 2 秒）
+                                    依次递增，避免瞬时大量请求压垮服务器</div>
+                                <div style="margin-bottom: 4px;">Axios 拦截器（Interceptor）自动捕获错误并重试</div>
+                                <div style="margin-bottom: 4px;">任务级重试：</div>
+                                <div style="margin-bottom: 4px;"> 触发条件：在业务层监测到 retry 标识时，自动触发 Session 刷新与页面重载流程
+                                    <div style="margin-bottom: 4px;"> Session 自动刷新：调用认证接口重新获取有效凭证</div>
+                                    <div style="margin-bottom: 4px;"> 页面上下文重载：恢复 DOM 状态和业务执行环境</div>
+                                    <div style="margin-bottom: 4px;"> 任务断点续传：从失败节点重新执行，避免重复操作</div>
+                        </li>
+                        <li class="feature-item">
+                            <strong>自动化登录的滑块验证问题</strong>
+                            <div style="margin-bottom: 4px;">基于 Puppeteer 的 page.mouse API</div>
+                            <div style="margin-bottom: 4px;">在滑块拖拽过程中，起始点通过 Math.random() 生成微小偏移模拟手指按压不准</div>
+                            <div style="margin-bottom: 4px;">拖拽路径采用二次贝塞尔曲线替代直线，并在 Y 轴叠加随机抖动</div>
+                            <div style="margin-bottom: 4px;">利用 sin 函数 (0.5 - 0.5 * Math.cos(t * Math.PI)) 构建
+                                Ease-in-out 速度曲线</div>
+                            <div style="margin-bottom: 4px;">并在松开鼠标前插入 100-300ms 随机停顿 (await sleep) 模拟"确认对齐"行为</div>
+                            <div style="margin-bottom: 4px;">缺口距离识别由后端 Python 服务承担，通过调用图像识别 API（基于
+                                OpenCV/深度学习模型）计算滑块缺口像素偏移量，前端通过 HTTP 请求获取距离参数后执行拖拽
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
